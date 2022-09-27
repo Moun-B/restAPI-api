@@ -11,28 +11,30 @@ class Item(BaseModel): #Serializer
     price:int
     on_offer:bool
 
+    class Config:
+        orm_mode=True
 
+@app.get('/items')
 
-@app.get('/')
+def get_all_items():
+    pass
 
-def index():
-    return {"message": "Hello World"}
+@app.get('/item/{item_id}')
 
-@app.get('/greet/{name}')
+def get_an_item(item_id:int):
+    pass
 
-def greet_name(name:str):
-    return {"greeting": f"Hello {name}"}
+@app.post('/items')
 
-
-@app.get('/greet')
-def greet_optional_name(name:Optional[str]="user"):
-    return {"message": f"Hello {name}"}
+def create_item():
+    pass
 
 @app.put('/item/{item_id}')
 
-def update_item(item_id:int, item:Item):
-    return {"name": item.name,
-            "description": item.description,
-            "price": item.price,
-            "on_offer": item.on_offer
-            }
+def update_item(item_id:int):
+    pass
+
+@app.delete('/item/{item_id}')
+
+def delete_item(item_id:int):
+    pass
