@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-engine=create_engine("postgresl://postgres:6nhydvn2M@localhost/item_db",
+engine=create_engine("postgresql://postgres:6nhydvn2M@localhost/item_db",
     echo=True
 )
 
